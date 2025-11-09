@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useModal } from '../contexts/ModalContext';
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:5001/api';
@@ -13,6 +14,7 @@ function BrokerLogin() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { showModal } = useModal();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,8 +41,12 @@ function BrokerLogin() {
         localStorage.setItem('authToken', response.data.token);
         localStorage.setItem('userData', JSON.stringify(response.data.user));
         
-        alert(`✅ ${isLogin ? 'Login' : 'Signup'} successful!`);
-        navigate('/broker-dashboard');
+        showModal(
+          `${isLogin ? 'Login' : 'Signup'} Successful!`,
+          `Welcome${isLogin ? ' back' : ''}, ${response.data.user.username}!`,
+          'success'
+        );
+        setTimeout(() => navigate('/broker-dashboard'), 1000);
       }
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred');

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useModal } from '../contexts/ModalContext';
 import { api } from '../utils/api';
 import PortfolioChart from '../components/PortfolioChart';
 import { 
@@ -8,6 +9,7 @@ import {
 } from 'recharts';
 
 function UserDashboard() {
+  const { showModal } = useModal();
   const [user, setUser] = useState(null);
   const [nickname, setNickname] = useState('guest');
   const [maxEthHoldings, setMaxEthHoldings] = useState(5.0); // Max ETH from user account
@@ -109,13 +111,17 @@ function UserDashboard() {
 
   const handleConvertToEeth = () => {
     if (ethHoldings <= 0) {
-      alert('Please enter a valid ETH amount');
+      showModal('Invalid Amount', 'Please enter a valid ETH amount', 'error');
       return;
     }
     const convertedAmount = ethHoldings * conversionRate;
     setEethHoldings(convertedAmount);
     setIsConverted(true);
-    alert(`✅ Converted ${ethHoldings} ETH to ${convertedAmount.toFixed(4)} eETH!\n\nYou can now generate portfolios with ether.fi protocols.`);
+    showModal(
+      'Conversion Successful!',
+      `Converted ${ethHoldings} ETH to ${convertedAmount.toFixed(4)} eETH!\n\nYou can now generate portfolios with ether.fi protocols.`,
+      'success'
+    );
   };
 
   const loadRecommendationData = async () => {
@@ -133,7 +139,11 @@ function UserDashboard() {
 
   const handleGeneratePortfolios = async () => {
     if (!isConverted) {
-      alert('⚠️ Please convert your ETH to eETH first!\n\nClick the "Convert to eETH" button to stake your ETH with ether.fi.');
+      showModal(
+        'Conversion Required',
+        'Please convert your ETH to eETH first!\n\nClick the "Convert to eETH" button to stake your ETH with ether.fi.',
+        'warning'
+      );
       return;
     }
     
@@ -169,7 +179,7 @@ function UserDashboard() {
       }
     } catch (error) {
       console.error('Error generating portfolios:', error);
-      alert('Error generating portfolios. Please try again.');
+      showModal('Generation Failed', 'Error generating portfolios. Please try again.', 'error');
     } finally {
       setLoading(false);
     }
@@ -337,11 +347,15 @@ function UserDashboard() {
       localStorage.setItem('currentRecId', recId);
       localStorage.setItem('userHash', userHashValue);
       
-      alert(`Recommendation created! Share ID with broker: ${recId}`);
+      showModal(
+        'Recommendation Created!',
+        `Share this ID with your broker: ${recId}\n\nVotes will auto-refresh every 3 seconds.`,
+        'success'
+      );
       console.log('Recommendation created. Votes will auto-refresh every 3 seconds.');
     } catch (error) {
       console.error('Error creating recommendation:', error);
-      alert('Error creating recommendation. Please try again.');
+      showModal('Creation Failed', 'Error creating recommendation. Please try again.', 'error');
     }
   };
 
@@ -373,15 +387,23 @@ function UserDashboard() {
       // Automatically send feedback to LLM
       try {
         await api.submitFeedback(currentRecId, '👍', `User selected: ${decision} with ${timeLimit} days time limit`);
-        alert('✅ Decision saved!\n📊 Projected earnings calculated!\n🤖 Feedback sent to AI system!\n\nScroll down to see your earnings breakdown.');
+        showModal(
+          'Decision Saved Successfully!',
+          'Projected earnings calculated!\nFeedback sent to AI system!\n\nScroll down to see your earnings breakdown.',
+          'success'
+        );
       } catch (feedbackError) {
         console.error('Error submitting feedback:', feedbackError);
         // Don't fail the whole operation if feedback fails
-        alert('✅ Decision saved!\n📊 Projected earnings calculated!\n⚠️ Feedback to AI could not be sent.\n\nScroll down to see your earnings breakdown.');
+        showModal(
+          'Decision Saved!',
+          'Projected earnings calculated!\n\nNote: Feedback to AI could not be sent.\n\nScroll down to see your earnings breakdown.',
+          'warning'
+        );
       }
     } catch (error) {
       console.error('Error submitting decision:', error);
-      alert('Error submitting decision. Please try again.');
+      showModal('Submission Failed', 'Error submitting decision. Please try again.', 'error');
     }
   };
 
@@ -402,7 +424,7 @@ function UserDashboard() {
       setProfitInfo(null);
       setLastVoteUpdate(null);
       
-      alert('Session cleared! You can now generate new portfolios.');
+      showModal('Session Cleared!', 'You can now generate new portfolios.', 'success');
     }
   };
 
@@ -441,6 +463,106 @@ function UserDashboard() {
         )}
       </div>
 
+      {/* Premium Upgrade Banner */}
+      <div className="card" style={{ 
+        marginTop: '30px',
+        marginBottom: '30px',
+        background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 165, 0, 0.1) 100%)',
+        border: '2px solid rgba(255, 215, 0, 0.5)',
+        boxShadow: '0 8px 32px rgba(255, 215, 0, 0.2)',
+        position: 'relative',
+        overflow: 'hidden',
+        padding: '20px 24px'
+      }}>
+        {/* Premium Badge */}
+        <div className="premium-badge" style={{
+          position: 'absolute',
+          top: '16px',
+          right: '16px',
+          color: '#000',
+          padding: '6px 12px',
+          borderRadius: '16px',
+          fontSize: '11px',
+          fontWeight: '700',
+          letterSpacing: '0.5px',
+          boxShadow: '0 4px 12px rgba(255, 215, 0, 0.4)'
+        }}>
+          ⭐ PREMIUM
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px', paddingRight: '100px' }}>
+          <div style={{ 
+            fontSize: '60px', 
+            flexShrink: 0,
+            filter: 'drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3))'
+          }}>
+            👑
+          </div>
+          
+          <div style={{ flex: 1 }}>
+            <h3 style={{ 
+              fontSize: '22px', 
+              marginBottom: '8px',
+              background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontWeight: '800'
+            }}>
+              Unlock Premium Access
+            </h3>
+            <p style={{ 
+              fontSize: '15px', 
+              color: '#e8eaed', 
+              marginBottom: '14px',
+              lineHeight: '1.5'
+            }}>
+              Get advice from <strong style={{ color: '#FFD700' }}>elite brokers with 90%+ success rates</strong> + <strong style={{ color: '#10b981' }}>One FREE Consultation</strong>
+            </p>
+            
+            {/* Compact Premium Benefits */}
+            <div style={{ display: 'flex', gap: '16px', marginBottom: '14px', flexWrap: 'wrap', fontSize: '13px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ color: '#10b981', fontSize: '16px' }}>✓</span>
+                <span style={{ color: '#e8eaed' }}>Top 5% Brokers</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ color: '#10b981', fontSize: '16px' }}>✓</span>
+                <span style={{ color: '#e8eaed' }}>Free Consultation</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ color: '#10b981', fontSize: '16px' }}>✓</span>
+                <span style={{ color: '#e8eaed' }}>Priority Reviews</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ color: '#10b981', fontSize: '16px' }}>✓</span>
+                <span style={{ color: '#e8eaed' }}>Advanced Analytics</span>
+              </div>
+            </div>
+
+            <button 
+              className="btn btn-premium"
+              onClick={() => showModal(
+                'Premium Upgrade Available!',
+                'Upgrade to Premium for:\n• Access to top 5% rated brokers (90%+ success rates)\n• One FREE consultation with an elite broker\n• Priority portfolio reviews\n• Advanced analytics and insights\n• 24/7 premium support\n\nContact us to upgrade your account!',
+                'premium'
+              )}
+              style={{ 
+                fontSize: '14px',
+                padding: '10px 24px',
+                border: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+            >
+              <span>👑 Upgrade Now</span>
+              <span style={{ fontSize: '11px', opacity: 0.8 }}>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Profile Section */}
       <div className="card">
         <h2 style={{ marginBottom: '20px', fontSize: '24px' }}>Your Anonymized Profile</h2>
@@ -468,7 +590,11 @@ function UserDashboard() {
                   setEthHoldings(value);
                 } else {
                   setEthHoldings(maxEthHoldings);
-                  alert(`⚠️ You can only convert up to ${maxEthHoldings} ETH from your account balance.`);
+                  showModal(
+                    'Limit Exceeded',
+                    `You can only convert up to ${maxEthHoldings} ETH from your account balance.`,
+                    'warning'
+                  );
                 }
               }}
               step="0.1"
@@ -600,7 +726,11 @@ function UserDashboard() {
                 setIsConverted(false);
                 setEethHoldings(0);
                 setPortfolios(null);
-                alert('✅ Conversion reset!\n\nYou can now edit your ETH amount and convert again.');
+                showModal(
+                  'Conversion Reset!',
+                  'You can now edit your ETH amount and convert again.',
+                  'success'
+                );
               }}
               style={{
                 padding: '12px 20px',

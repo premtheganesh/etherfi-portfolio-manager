@@ -110,3 +110,53 @@
   }
 }
 
+/* Spinner animation for loading states */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Premium button hover effects */
+.btn-premium {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+  background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+}
+
+.btn-premium:active {
+  transform: translateY(-1px);
+}
+
+/* Premium badge animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.premium-badge {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    90deg,
+    #FFD700 0%,
+    #FFA500 50%,
+    #FFD700 100%
+  );
+  background-size: 200% 100%;
+}
+

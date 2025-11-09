@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+import { ModalProvider } from './contexts/ModalContext';
 import Home from './pages/Home';
 import UserDashboard from './pages/UserDashboard';
 import BrokerDashboard from './pages/BrokerDashboard';
@@ -87,25 +88,27 @@ function Navigation() {
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navigation />
-        
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/user-login" element={<UserLogin />} />
-            <Route path="/broker-login" element={<BrokerLogin />} />
-            <Route path="/user-dashboard" element={<UserDashboard />} />
-            <Route path="/broker-dashboard" element={<BrokerDashboard />} />
-            <Route path="/broker/profile/:brokerId" element={<BrokerProfile />} />
-            {/* Legacy routes for compatibility */}
-            <Route path="/user" element={<UserDashboard />} />
-            <Route path="/broker" element={<BrokerDashboard />} />
-          </Routes>
+    <ModalProvider>
+      <Router>
+        <div className="App">
+          <Navigation />
+          
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/user-login" element={<UserLogin />} />
+              <Route path="/broker-login" element={<BrokerLogin />} />
+              <Route path="/user-dashboard" element={<UserDashboard />} />
+              <Route path="/broker-dashboard" element={<BrokerDashboard />} />
+              <Route path="/broker/profile/:brokerId" element={<BrokerProfile />} />
+              {/* Legacy routes for compatibility */}
+              <Route path="/user" element={<UserDashboard />} />
+              <Route path="/broker" element={<BrokerDashboard />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </ModalProvider>
   );
 }
 

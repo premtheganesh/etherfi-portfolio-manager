@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useModal } from '../contexts/ModalContext';
 import { api } from '../utils/api';
 import PortfolioChart from '../components/PortfolioChart';
 
 function BrokerDashboard() {
+  const { showModal } = useModal();
   const [recommendations, setRecommendations] = useState({});
   const [selectedRecId, setSelectedRecId] = useState('');
   const [currentRec, setCurrentRec] = useState(null);
@@ -67,12 +69,12 @@ function BrokerDashboard() {
   const handleSubmitVote = async () => {
     try {
       await api.submitVote(selectedRecId, selectedVote);
-      alert('Vote recorded ✅');
+      showModal('Vote Recorded!', 'Your vote has been successfully submitted.', 'success');
       loadRecommendationDetails(); // Reload to show updated votes
       loadRecommendations(); // Reload to update earnings if decision was made
     } catch (error) {
       console.error('Error submitting vote:', error);
-      alert('Error submitting vote. Please try again.');
+      showModal('Vote Failed', 'Error submitting vote. Please try again.', 'error');
     }
   };
 
