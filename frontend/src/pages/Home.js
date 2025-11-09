@@ -58,8 +58,8 @@ function Home() {
         }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '64px', marginBottom: '20px' }}>👤</div>
-            <h2 style={{ fontSize: '28px', marginBottom: '16px', color: '#a78bfa' }}>For Users</h2>
-            <p style={{ fontSize: '16px', color: 'rgba(232, 234, 237, 0.8)', marginBottom: '24px', lineHeight: '1.6' }}>
+            <h2 style={{ fontSize: '28px', marginBottom: '16px', color: '#ffffff' }}>For Users</h2>
+            <p style={{ fontSize: '16px', color: '#FFD700', marginBottom: '24px', lineHeight: '1.6' }}>
               Get personalized portfolio recommendations based on your risk profile
               and goals. Receive validation from professional brokers.
             </p>
@@ -79,8 +79,8 @@ function Home() {
         }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '64px', marginBottom: '20px' }}>🧑‍💼</div>
-            <h2 style={{ fontSize: '28px', marginBottom: '16px', color: '#6ee7b7' }}>For Brokers</h2>
-            <p style={{ fontSize: '16px', color: 'rgba(232, 234, 237, 0.8)', marginBottom: '24px', lineHeight: '1.6' }}>
+            <h2 style={{ fontSize: '28px', marginBottom: '16px', color: '#ffffff' }}>For Brokers</h2>
+            <p style={{ fontSize: '16px', color: '#FFD700', marginBottom: '24px', lineHeight: '1.6' }}>
               Review AI-generated portfolios and provide expert recommendations.
               Earn rewards for your advisory services.
             </p>
@@ -113,22 +113,22 @@ function Home() {
       <div className="grid grid-cols-3" style={{ gap: '20px', marginTop: '40px' }}>
         <div className="card" style={{ textAlign: 'center', background: 'rgba(139, 92, 246, 0.05)' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🤖</div>
-          <h3 style={{ fontSize: '18px', color: '#a78bfa', marginBottom: '8px' }}>AI-Powered</h3>
-          <p style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)' }}>
+          <h3 style={{ fontSize: '18px', color: '#ffffff', marginBottom: '8px' }}>AI-Powered</h3>
+          <p style={{ fontSize: '14px', color: '#FFD700' }}>
             Claude AI generates personalized portfolios
           </p>
         </div>
         <div className="card" style={{ textAlign: 'center', background: 'rgba(16, 185, 129, 0.05)' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🔐</div>
-          <h3 style={{ fontSize: '18px', color: '#6ee7b7', marginBottom: '8px' }}>Secure</h3>
-          <p style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)' }}>
+          <h3 style={{ fontSize: '18px', color: '#ffffff', marginBottom: '8px' }}>Secure</h3>
+          <p style={{ fontSize: '14px', color: '#FFD700' }}>
             Encrypted authentication & session management
           </p>
         </div>
         <div className="card" style={{ textAlign: 'center', background: 'rgba(99, 102, 241, 0.05)' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>💰</div>
-          <h3 style={{ fontSize: '18px', color: '#818cf8', marginBottom: '8px' }}>Rewarding</h3>
-          <p style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)' }}>
+          <h3 style={{ fontSize: '18px', color: '#ffffff', marginBottom: '8px' }}>Rewarding</h3>
+          <p style={{ fontSize: '14px', color: '#FFD700' }}>
             Fair profit distribution for all participants
           </p>
         </div>

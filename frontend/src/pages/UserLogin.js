@@ -75,7 +75,7 @@ function UserLogin() {
           }}>
             👤 User Portal
           </h1>
-          <p style={{ color: 'rgba(232, 234, 237, 0.7)', fontSize: '15px' }}>
+          <p style={{ color: '#FFD700', fontSize: '15px' }}>
             {isLogin ? 'Login to access your portfolio' : 'Create your account'}
           </p>
         </div>
@@ -100,7 +100,7 @@ function UserLogin() {
               marginBottom: '8px',
               fontSize: '14px',
               fontWeight: '600',
-              color: '#a78bfa'
+              color: '#ffffff'
             }}>
               Username
             </label>
@@ -125,7 +125,7 @@ function UserLogin() {
                 marginBottom: '8px',
                 fontSize: '14px',
                 fontWeight: '600',
-                color: '#a78bfa'
+                color: '#ffffff'
               }}>
                 Email
               </label>
@@ -150,7 +150,7 @@ function UserLogin() {
               marginBottom: '8px',
               fontSize: '14px',
               fontWeight: '600',
-              color: '#a78bfa'
+              color: '#ffffff'
             }}>
               Password
             </label>
@@ -176,7 +176,7 @@ function UserLogin() {
                   marginBottom: '8px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#a78bfa'
+                  color: '#ffffff'
                 }}>
                   Confirm Password
                 </label>
@@ -200,7 +200,7 @@ function UserLogin() {
                   marginBottom: '8px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#a78bfa'
+                  color: '#ffffff'
                 }}>
                   Initial ETH Holdings (Optional)
                 </label>
@@ -262,7 +262,7 @@ function UserLogin() {
             <Link 
               to="/broker-login"
               style={{ 
-                color: '#6ee7b7',
+                color: '#ffffff',
                 textDecoration: 'none',
                 fontSize: '14px'
               }}

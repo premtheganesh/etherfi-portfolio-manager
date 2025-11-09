@@ -74,7 +74,7 @@ function BrokerLogin() {
           }}>
             👔 Broker Portal
           </h1>
-          <p style={{ color: 'rgba(232, 234, 237, 0.7)', fontSize: '15px' }}>
+          <p style={{ color: '#FFD700', fontSize: '15px' }}>
             {isLogin ? 'Login to provide advisory services' : 'Create your broker account'}
           </p>
         </div>
@@ -99,7 +99,7 @@ function BrokerLogin() {
               marginBottom: '8px',
               fontSize: '14px',
               fontWeight: '600',
-              color: '#6ee7b7'
+              color: '#ffffff'
             }}>
               Username
             </label>
@@ -124,7 +124,7 @@ function BrokerLogin() {
                 marginBottom: '8px',
                 fontSize: '14px',
                 fontWeight: '600',
-                color: '#6ee7b7'
+                color: '#ffffff'
               }}>
                 Email
               </label>
@@ -149,7 +149,7 @@ function BrokerLogin() {
               marginBottom: '8px',
               fontSize: '14px',
               fontWeight: '600',
-              color: '#6ee7b7'
+              color: '#ffffff'
             }}>
               Password
             </label>
@@ -174,7 +174,7 @@ function BrokerLogin() {
                 marginBottom: '8px',
                 fontSize: '14px',
                 fontWeight: '600',
-                color: '#6ee7b7'
+                color: '#ffffff'
               }}>
                 Confirm Password
               </label>
@@ -236,7 +236,7 @@ function BrokerLogin() {
             <Link 
               to="/user-login"
               style={{ 
-                color: '#a78bfa',
+                color: '#ffffff',
                 textDecoration: 'none',
                 fontSize: '14px'
               }}

@@ -3,14 +3,14 @@
 }
 
 .navbar {
-  background: rgba(15, 15, 35, 0.9);
+  background: #000000;
   backdrop-filter: blur(20px);
   padding: 18px 0;
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .nav-content {
@@ -22,10 +22,7 @@
 .nav-logo {
   font-size: 26px;
   font-weight: 800;
-  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
   text-decoration: none;
   letter-spacing: -0.5px;
 }
@@ -55,23 +52,23 @@
   text-align: center;
   margin: 50px 0;
   padding: 20px;
+  background: #000000;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .page-title {
   font-size: 56px;
   font-weight: 900;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #ffffff 0%, #8b5cf6 50%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
   letter-spacing: -1px;
   text-shadow: none;
 }
 
 .page-subtitle {
   font-size: 18px;
-  color: rgba(232, 234, 237, 0.7);
+  color: #FFD700;
   font-weight: 400;
   line-height: 1.6;
   max-width: 700px;

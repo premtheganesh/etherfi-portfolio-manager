@@ -90,7 +90,7 @@ function BrokerProfile() {
             padding: '8px 16px',
             fontSize: '14px',
             background: 'rgba(139, 92, 246, 0.1)',
-            color: '#a78bfa',
+            color: '#ffffff',
             border: '1px solid rgba(139, 92, 246, 0.3)',
             borderRadius: '8px',
             cursor: 'pointer',
@@ -145,7 +145,7 @@ function BrokerProfile() {
                 {profile.username}
               </h2>
               <div style={{ 
-                color: 'rgba(232, 234, 237, 0.7)', 
+                color: '#FFD700', 
                 fontSize: '14px' 
               }}>
                 Broker ID: {profile.broker_id}
@@ -166,7 +166,7 @@ function BrokerProfile() {
             background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%)',
             border: '1px solid rgba(16, 185, 129, 0.3)'
           }}>
-            <div style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '8px' }}>
+            <div style={{ fontSize: '14px', color: '#FFD700', marginBottom: '8px' }}>
               💰 Total Earnings
             </div>
             <div style={{ 
@@ -187,13 +187,13 @@ function BrokerProfile() {
             background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%)',
             border: '1px solid rgba(139, 92, 246, 0.3)'
           }}>
-            <div style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '8px' }}>
+            <div style={{ fontSize: '14px', color: '#FFD700', marginBottom: '8px' }}>
               📊 Total Votes Cast
             </div>
             <div style={{ 
               fontSize: '32px', 
               fontWeight: '700',
-              color: '#a78bfa',
+              color: '#ffffff',
               marginBottom: '4px'
             }}>
               {profile.total_votes}
@@ -212,7 +212,7 @@ function BrokerProfile() {
               ? '1px solid rgba(16, 185, 129, 0.3)'
               : '1px solid rgba(245, 158, 11, 0.3)'
           }}>
-            <div style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '8px' }}>
+            <div style={{ fontSize: '14px', color: '#FFD700', marginBottom: '8px' }}>
               🎯 Success Rate
             </div>
             <div style={{ 
@@ -233,13 +233,13 @@ function BrokerProfile() {
             background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.05) 100%)',
             border: '1px solid rgba(99, 102, 241, 0.3)'
           }}>
-            <div style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '8px' }}>
+            <div style={{ fontSize: '14px', color: '#FFD700', marginBottom: '8px' }}>
               ⭐ Most Recommended
             </div>
             <div style={{ 
               fontSize: '18px', 
               fontWeight: '600',
-              color: '#818cf8',
+              color: '#ffffff',
               marginBottom: '4px',
               lineHeight: '1.3'
             }}>

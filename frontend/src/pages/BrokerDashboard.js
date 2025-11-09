@@ -96,7 +96,7 @@ function BrokerDashboard() {
         <div style={{ textAlign: 'center' }}>
           <h3 style={{ 
             fontSize: '18px', 
-            color: '#6ee7b7',
+            color: '#ffffff',
             marginBottom: '12px',
             fontWeight: '600',
             letterSpacing: '0.5px'
@@ -116,7 +116,7 @@ function BrokerDashboard() {
           </div>
             <p style={{ 
               fontSize: '14px', 
-              color: 'rgba(232, 234, 237, 0.7)',
+              color: '#FFD700',
               margin: 0
             }}>
               Your earnings from recommendations you voted on (3% of profits)
@@ -179,7 +179,7 @@ function BrokerDashboard() {
                       padding: '6px 12px', 
                       borderRadius: '6px',
                       fontSize: '14px',
-                      color: '#a78bfa',
+                      color: '#ffffff',
                       fontWeight: '600',
                       letterSpacing: '0.5px'
                     }}>
@@ -215,7 +215,7 @@ function BrokerDashboard() {
                           <th style={{ 
                             padding: '14px 20px', 
                             textAlign: 'left',
-                            color: '#a78bfa',
+                            color: '#ffffff',
                             fontWeight: '600',
                             fontSize: '14px',
                             textTransform: 'uppercase',
@@ -224,7 +224,7 @@ function BrokerDashboard() {
                           <th style={{ 
                             padding: '14px 20px', 
                             textAlign: 'left',
-                            color: '#a78bfa',
+                            color: '#ffffff',
                             fontWeight: '600',
                             fontSize: '14px',
                             textTransform: 'uppercase',
@@ -241,7 +241,7 @@ function BrokerDashboard() {
                           }}>
                             <td style={{ 
                               padding: '14px 20px',
-                              color: 'rgba(232, 234, 237, 0.8)',
+                              color: '#FFD700',
                               fontWeight: '500'
                             }}>
                               {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
@@ -287,7 +287,7 @@ function BrokerDashboard() {
                           <th style={{ 
                             padding: '14px 20px', 
                             textAlign: 'left',
-                            color: '#818cf8',
+                            color: '#ffffff',
                             fontWeight: '600',
                             fontSize: '14px',
                             textTransform: 'uppercase',
@@ -296,7 +296,7 @@ function BrokerDashboard() {
                           <th style={{ 
                             padding: '14px 20px', 
                             textAlign: 'left',
-                            color: '#818cf8',
+                            color: '#ffffff',
                             fontWeight: '600',
                             fontSize: '14px',
                             textTransform: 'uppercase',
@@ -313,7 +313,7 @@ function BrokerDashboard() {
                           }}>
                             <td style={{ 
                               padding: '14px 20px',
-                              color: 'rgba(232, 234, 237, 0.8)',
+                              color: '#FFD700',
                               fontWeight: '500'
                             }}>
                               {key === 'apy' ? 'APY' : 
@@ -437,7 +437,7 @@ function BrokerDashboard() {
                     alignItems: 'center',
                     border: '1px solid rgba(139, 92, 246, 0.2)'
                   }}>
-                    <span style={{ color: 'rgba(232, 234, 237, 0.8)' }}>
+                    <span style={{ color: '#FFD700' }}>
                       {portfolio}
                     </span>
                     <span style={{ 
@@ -473,7 +473,7 @@ function BrokerDashboard() {
               boxShadow: '0 4px 12px rgba(16, 185, 129, 0.1)'
             }}>
               <p style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <strong style={{ color: '#6ee7b7', minWidth: '100px' }}>Decision:</strong> 
+                <strong style={{ color: '#ffffff', minWidth: '100px' }}>Decision:</strong> 
                 <span style={{ 
                   color: '#e8eaed',
                   background: 'rgba(16, 185, 129, 0.2)',
@@ -485,7 +485,7 @@ function BrokerDashboard() {
                 </span>
               </p>
               <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <strong style={{ color: '#6ee7b7', minWidth: '100px' }}>Time limit:</strong> 
+                <strong style={{ color: '#ffffff', minWidth: '100px' }}>Time limit:</strong> 
                 <span style={{ 
                   color: '#e8eaed',
                   background: 'rgba(16, 185, 129, 0.2)',

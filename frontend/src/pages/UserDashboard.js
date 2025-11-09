@@ -545,10 +545,10 @@ function UserDashboard() {
             background: 'rgba(255, 255, 255, 0.05)', 
             borderRadius: '10px'
           }}>
-            <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+            <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
               Your ETH
             </div>
-            <div style={{ fontSize: '24px', fontWeight: '700', color: '#a78bfa' }}>
+            <div style={{ fontSize: '24px', fontWeight: '700', color: '#ffffff' }}>
               {ethHoldings.toFixed(4)}
             </div>
           </div>
@@ -557,10 +557,10 @@ function UserDashboard() {
             background: 'rgba(255, 255, 255, 0.05)', 
             borderRadius: '10px'
           }}>
-            <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+            <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
               Conversion Rate
             </div>
-            <div style={{ fontSize: '24px', fontWeight: '700', color: '#818cf8' }}>
+            <div style={{ fontSize: '24px', fontWeight: '700', color: '#ffffff' }}>
               {conversionRate.toFixed(4)}
             </div>
           </div>
@@ -570,7 +570,7 @@ function UserDashboard() {
             borderRadius: '10px',
             border: isConverted ? '1px solid rgba(16, 185, 129, 0.3)' : 'none'
           }}>
-            <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+            <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
               You'll Receive
             </div>
             <div style={{ fontSize: '24px', fontWeight: '700', color: isConverted ? '#10b981' : '#a78bfa' }}>
@@ -660,7 +660,7 @@ function UserDashboard() {
             marginBottom: '12px', 
             fontSize: '15px', 
             fontWeight: '600',
-            color: '#a78bfa'
+            color: '#ffffff'
           }}>
             Select Portfolio Strategy Type:
           </label>
@@ -787,7 +787,7 @@ function UserDashboard() {
                     <h3 style={{ 
                       fontSize: '18px', 
                       marginBottom: '20px', 
-                      color: '#a78bfa',
+                      color: '#ffffff',
                       fontWeight: '600'
                     }}>
                       {name}
@@ -992,7 +992,7 @@ function UserDashboard() {
             {lastVoteUpdate && (
               <div style={{ 
                 fontSize: '13px', 
-                color: 'rgba(232, 234, 237, 0.7)', 
+                color: '#FFD700', 
                 marginBottom: '15px',
                 padding: '8px 12px',
                 background: 'rgba(139, 92, 246, 0.1)',
@@ -1009,7 +1009,7 @@ function UserDashboard() {
                 <div style={{ 
                   marginBottom: '15px',
                   fontSize: '14px',
-                  color: 'rgba(232, 234, 237, 0.8)',
+                  color: '#FFD700',
                   fontWeight: '500'
                 }}>
                   Individual Broker Votes & Potential Earnings
@@ -1034,7 +1034,7 @@ function UserDashboard() {
                             <Link
                               to={`/broker/profile/${voteData.broker_id}`}
                               style={{ 
-                                color: '#a78bfa', 
+                                color: '#ffffff', 
                                 fontWeight: '600',
                                 marginBottom: '6px',
                                 fontSize: '16px',
@@ -1055,7 +1055,7 @@ function UserDashboard() {
                               👤 {voteData.broker_username}
                             </Link>
                             <div style={{ 
-                              color: 'rgba(232, 234, 237, 0.7)', 
+                              color: '#FFD700', 
                               fontSize: '13px',
                               marginBottom: '8px'
                             }}>
@@ -1115,7 +1115,7 @@ function UserDashboard() {
                   background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(99, 102, 241, 0.1) 100%)', 
                   borderRadius: '10px',
                   fontSize: '15px',
-                  color: '#6ee7b7',
+                  color: '#ffffff',
                   border: '1px solid rgba(16, 185, 129, 0.3)',
                   fontWeight: '600'
                 }}>
@@ -1159,7 +1159,7 @@ function UserDashboard() {
               />
               <p style={{ 
                 fontSize: '13px', 
-                color: 'rgba(232, 234, 237, 0.7)', 
+                color: '#FFD700', 
                 marginTop: '8px',
                 lineHeight: '1.5'
               }}>
@@ -1196,15 +1196,15 @@ function UserDashboard() {
                 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                     <div>
-                      <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+                      <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
                         Initial Investment
                       </div>
-                      <div style={{ fontSize: '24px', fontWeight: '700', color: '#a78bfa' }}>
+                      <div style={{ fontSize: '24px', fontWeight: '700', color: '#ffffff' }}>
                         ${profitInfo.initial_investment.toLocaleString()}
                       </div>
                     </div>
                     <div>
-                      <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+                      <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
                         Expected Return (Annual)
                       </div>
                       <div style={{ fontSize: '24px', fontWeight: '700', color: '#10b981' }}>
@@ -1212,15 +1212,15 @@ function UserDashboard() {
                       </div>
                     </div>
                     <div>
-                      <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+                      <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
                         Time Period
                       </div>
-                      <div style={{ fontSize: '24px', fontWeight: '700', color: '#818cf8' }}>
+                      <div style={{ fontSize: '24px', fontWeight: '700', color: '#ffffff' }}>
                         {profitInfo.time_period_days} days
                       </div>
                     </div>
                     <div>
-                      <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.7)', marginBottom: '6px' }}>
+                      <div style={{ fontSize: '13px', color: '#FFD700', marginBottom: '6px' }}>
                         Total Profit
                       </div>
                       <div style={{ fontSize: '24px', fontWeight: '700', color: '#10b981' }}>
@@ -1253,14 +1253,14 @@ function UserDashboard() {
                       border: '1px solid rgba(139, 92, 246, 0.3)'
                     }}>
                       <div>
-                        <div style={{ fontSize: '15px', fontWeight: '600', color: '#a78bfa', marginBottom: '4px' }}>
+                        <div style={{ fontSize: '15px', fontWeight: '600', color: '#ffffff', marginBottom: '4px' }}>
                           👤 Your Earnings (96%)
                         </div>
                         <div style={{ fontSize: '12px', color: 'rgba(232, 234, 237, 0.6)' }}>
                           Portfolio returns
                         </div>
                       </div>
-                      <div style={{ fontSize: '28px', fontWeight: '800', color: '#a78bfa' }}>
+                      <div style={{ fontSize: '28px', fontWeight: '800', color: '#ffffff' }}>
                         ${rewardSplit.user.toLocaleString()}
                       </div>
                     </div>
@@ -1322,10 +1322,10 @@ function UserDashboard() {
                   border: '2px solid rgba(139, 92, 246, 0.4)',
                   textAlign: 'center'
                 }}>
-                  <div style={{ fontSize: '14px', color: 'rgba(232, 234, 237, 0.8)', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '14px', color: '#FFD700', marginBottom: '8px' }}>
                     Your Final Portfolio Value
                   </div>
-                  <div style={{ fontSize: '36px', fontWeight: '900', color: '#a78bfa' }}>
+                  <div style={{ fontSize: '36px', fontWeight: '900', color: '#ffffff' }}>
                     ${profitInfo.final_value.toLocaleString()}
                   </div>
                   <div style={{ fontSize: '13px', color: 'rgba(232, 234, 237, 0.6)', marginTop: '6px' }}>
@@ -1339,7 +1339,7 @@ function UserDashboard() {
                   background: 'rgba(99, 102, 241, 0.1)',
                   borderRadius: '8px',
                   fontSize: '12px',
-                  color: 'rgba(232, 234, 237, 0.7)',
+                  color: '#FFD700',
                   lineHeight: '1.6',
                   borderLeft: '3px solid #6366f1'
                 }}>
